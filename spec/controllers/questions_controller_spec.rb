@@ -1,8 +1,9 @@
 require 'rails_helper'
 RSpec.describe QuestionsController, type: :controller do
-  let(:question) {create(:question)}
+  let(:user) { create(:user) }
+  let(:question) { create(:question, author: user) }
   describe 'GET #index' do
-    let(:questions) {create_list(:question, 3)}
+    let(:questions) { create_list(:question, 3, author: user) }
 
     before {get :index}
 
@@ -57,11 +58,11 @@ RSpec.describe QuestionsController, type: :controller do
           context 'with valid attributes' do
 
             it 'saves a new question in the database' do
-              expect {post :create, params: {question: attributes_for(:question)} }.to change(Question, :count).by(1)
+              expect { post :create, params: { question: attributes_for(:question), author: user } }.to change(Question, :count).by(1)
             end
 
             it 'redirects to show view' do
-              post :create, params: {question: attributes_for(:question)}
+              post :create, params: { question: attributes_for(:question), author: user }
               expect(response).to redirect_to assigns(:question)
             end
           end
@@ -115,7 +116,8 @@ RSpec.describe QuestionsController, type: :controller do
         end
 
         describe 'DELETE #destroy' do
-          let!(:question) {create(:question)}
+          let!(:question) { create(:question, author: user) }
+
           it 'deletes the question' do
             expect {delete :destroy, params: {id: question} }.to change(Question, :count).by(-1)
           end
