@@ -17,12 +17,13 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    @question.author = User.last
 
     if @question.save
-    redirect_to @question
+      redirect_to @question, notice: 'Your question successfully created.'
     else
       render :new
-      end
+    end
   end
 
   def update
