@@ -1,0 +1,14 @@
+
+  p
+    = link_to question.title, question_path(question), method: :get
+
+    = question.body
+    = button_to 'Delete', question, method: :delete
+    = link_to 'Edit', '#', class: 'edit-question-link', data: { question_id: question.id }
+  p
+  = form_with model: question  do |f|
+    = f.label :title, 'Question title'
+    = f.text_field :title
+    = f.label :body, 'Question body'
+    = f.text_area :body
+    = f.submit 'Save'
