@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :answer do
     sequence :body do |n|
-      "answer#{n}"
+      "answers#{n}"
     end
 
     trait :invalid do

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User can show question with answers', %q{
- To find the answer i need
+ To find the answers i need
  As an authenticated or unauthenticated user
  I'd like to be able to view question with all answers
 } do
