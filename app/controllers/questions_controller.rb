@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[show new update destroy]
 
 
-  # authorize_resource
+   authorize_resource
 
   def index
 
