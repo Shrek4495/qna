@@ -3,19 +3,22 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[show new update destroy]
 
 
-
+  # authorize_resource
 
   def index
+
     @questions = Question.all
   end
 
   def show
+
     @answer = Answer.new
     @answer.links.new
 
   end
 
   def new
+
     @question.links.build
   end
 
@@ -36,6 +39,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+
     if @question.destroy
       redirect_to questions_path, notice: 'Your question successfully deleted.'
     else

@@ -8,8 +8,10 @@ class Ability
     #
       return unless user.present?
       can :read, :all
+    can :destroy, Question, { user_id: user.id }
       return unless user.admin?
       can :manage, :all
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
