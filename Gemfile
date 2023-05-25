@@ -45,6 +45,8 @@ gem "slim-rails"
 gem "devise"
 gem 'cancancan'
 gem 'doorkeeper'
+gem 'active_model_serializers', '~> 0.10'
+gem 'oj'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
