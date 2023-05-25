@@ -69,7 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_105420) do
     t.string "token", null: false
     t.integer "expires_in", null: false
     t.text "redirect_uri", null: false
-    t.string "scopes", default: "", null: false
+    t.string "scopes", default: ""
     t.datetime "created_at", null: false
     t.datetime "revoked_at"
     t.index ["application_id"], name: "index_oauth_access_grants_on_application_id"
@@ -97,8 +97,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_17_105420) do
     t.string "name", null: false
     t.string "uid", null: false
     t.string "secret", null: false
-    t.text "redirect_uri", null: false
-    t.string "scopes", default: "", null: false
+    t.text "redirect_uri"
+    t.string "scopes", default: ""
     t.boolean "confidential", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
