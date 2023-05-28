@@ -1,0 +1,9 @@
+{
+  "name": "shrek",
+  "version": "s",
+  "description": "exit",
+  "main": "index.js",
+  "repository": "https://github.com/Shrek4495/qna.git",
+  "author": "shrek4495 <shrekloginov@gmail.com>",
+  "license": "MIT"
+}

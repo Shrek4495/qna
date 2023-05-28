@@ -11,6 +11,7 @@ module Qna
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -18,6 +19,16 @@ module Qna
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    #
+    #config.autoload_paths << config.root.join('app')
+    config.autoload_paths << "#{config.root}/services"
+    config.eager_load_paths << "#{config.root}/services"
+    #
+    #  config.eager_load_paths << "#{Rails.root}/app"
+     config.active_job.queue_adapter = :sidekiq
+
+
+
     config.generators do |g|
       g.test_framework :rspec,
                        view_specs: false,

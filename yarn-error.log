@@ -1,0 +1,31 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js set version from sources
+
+PATH: 
+  /home/shrek/.rvm/gems/ruby-3.0.0/bin:/home/shrek/.rvm/gems/ruby-3.0.0@global/bin:/home/shrek/.rvm/rubies/ruby-3.0.0/bin:/home/shrek/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  10.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: Release not found: from
+      at /usr/share/yarn/lib/cli.js:86358:17
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
