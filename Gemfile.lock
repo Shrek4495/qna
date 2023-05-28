@@ -90,8 +90,12 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    chronic (0.10.2)
     concurrent-ruby (1.2.2)
+    connection_pool (2.4.1)
     crass (1.0.6)
+    cssbundling-rails (1.1.2)
+      railties (>= 6.0.0)
     date (3.3.3)
     debug (1.7.2)
       irb (>= 1.5.0)
@@ -124,6 +128,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsbundling-rails (1.1.1)
+      railties (>= 6.0.0)
     jsonapi-renderer (0.2.2)
     launchy (2.5.2)
       addressable (~> 2.8)
@@ -141,6 +147,8 @@ GEM
     mini_mime (1.1.2)
     minitest (5.18.0)
     msgpack (1.7.0)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
     net-imap (0.3.4)
       date
       net-protocol
@@ -161,6 +169,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
+    rack-protection (3.0.6)
+      rack
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.4.3)
@@ -194,6 +204,8 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    redis-client (0.14.1)
+      connection_pool
     regexp_parser (2.7.0)
     reline (0.3.3)
       io-console (~> 0.5)
@@ -218,6 +230,7 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.8.6)
       rexml (~> 3.2, >= 3.2.5)
@@ -225,6 +238,16 @@ GEM
       websocket (~> 1.0)
     shoulda-matchers (5.3.0)
       activesupport (>= 5.2.0)
+    sidekiq (7.1.1)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.14.0)
+    sinatra (3.0.6)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.0.6)
+      tilt (~> 2.0)
     slim (5.1.0)
       temple (~> 0.10.0)
       tilt (>= 2.0.6, < 2.2)
@@ -266,6 +289,8 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.7)
@@ -278,12 +303,14 @@ DEPENDENCIES
   bootsnap
   cancancan
   capybara
+  cssbundling-rails (~> 1.0)
   debug
   devise
   doorkeeper
   factory_bot_rails
   importmap-rails
   jbuilder
+  jsbundling-rails (~> 1.0)
   launchy
   oj
   pg (~> 1.1)
@@ -293,6 +320,8 @@ DEPENDENCIES
   rspec-rails
   selenium-webdriver
   shoulda-matchers
+  sidekiq
+  sinatra
   slim-rails
   sprockets-rails
   stimulus-rails
@@ -300,6 +329,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  whenever
 
 RUBY VERSION
    ruby 3.0.0p0
